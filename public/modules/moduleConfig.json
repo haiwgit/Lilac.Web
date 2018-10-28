@@ -1,0 +1,14 @@
+[
+    {
+        "title": "首页",
+        "parem": "index",
+        "rate": "/index",
+        "moduleCode": 1
+    },
+    {
+        "title": "文章",
+        "parem": "blog",
+        "rate": "/blog",
+        "moduleCode": 2
+    }
+]

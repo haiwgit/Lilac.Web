@@ -1,0 +1,75 @@
+<style>
+    .navdiv {
+        width: 100%;
+        height: 100%;
+        display: flex;
+    }
+
+    .nav-left {
+        width: 240px;
+        height: 100%;
+    }
+
+    .nav-left label {
+        width: 100%;
+        height: 100%;
+        font-size: 30px;
+        line-height: 60px;
+        padding-left: 10px;
+        color: white;
+        font-weight: bold;
+    }
+
+    .nav-center {
+        width: calc(100% - 360px);
+        width: -webkit-calc(100% - 360px);
+        width: -moz-calc(100% - 360px);
+        height: 100%;
+    }
+
+    .nav-center ul {
+        height: 65px;
+        margin-bottom: 0px;
+        display: flex;
+        list-style-type: disc;
+    }
+
+    .nav-center ul li {
+        padding: 10px 30px;
+        text-align: center;
+        line-height: 70px;
+        list-style-type: none;
+    }
+    .nav-selected label {
+        color: white !important;
+    }
+
+    .nav-center ul li label {
+        margin-bottom: 0px;
+        color: lightblue;
+        font-size: 16px;
+        font-weight: 500;
+    }
+
+    .nav-center ul li:hover label {
+        color: white;
+    }
+
+    .nav-right {
+        width: 120px;
+        height: 100%;
+    }
+</style>
+<div class="navdiv" ng-init="ininMe()">
+    <div class="nav-left">
+        <label>{{bolgName}}</label>
+    </div>
+    <div class="nav-center">
+        <ul>
+            <li ng-repeat="nav in navslist" ng-class="{true:'nav-selected',false:''}[currentParem.moduleCode==nav.moduleCode]" ng-click="navClick(nav)">
+                <label ng-bind="nav.title"></label>
+            </li>
+        </ul>
+    </div>
+    <div class="nav-right"></div>
+</div>

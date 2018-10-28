@@ -1,0 +1,26 @@
+.comm-full{
+    width: 100%;
+    height: 100%;
+}
+.comm-top{
+    width: 100%;
+    height: 65px;
+    background-color: #169fe6;
+}
+.comm-center{
+    width: 100%;
+    height: calc(100% - 65px);
+    height: -moz-calc(100% - 65px);
+    height: -webkit-calc(100% - 65px);
+    background-color: #c7c7c7;
+}
+.view-div{
+    width: calc(100% - 10px);
+    width: -moz-calc(100% - 10px);
+    width: -webkit-calc(100% - 10px);
+    height: calc(100% - 5px);
+    height: -moz-calc(100% - 5px);
+    height: -webkit-calc(100% - 5px);
+    margin: 0px auto;
+    background-color: white;
+}
