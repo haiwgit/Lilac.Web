@@ -6,6 +6,7 @@
   <link rel="shortcut icon" href="/favicon.ico">
  <link rel='stylesheet' href='/css/default.css' />
   <link rel='stylesheet' href='/css/common.css' />
+  <link rel='stylesheet' href='/css/indexManager/main.css' />
   <link rel='stylesheet' href='/lib/bootstrap/css/bootstrap.css' />
   <link rel='stylesheet' href='/lib/bootstrap/css/bootstrap.min.css' />
    <link rel='stylesheet' href='/lib/swiper/css/swiper.css' />
