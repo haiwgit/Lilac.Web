@@ -4,12 +4,13 @@
 <head>
   <title>{{ title }}</title>
   <link rel="shortcut icon" href="/favicon.ico">
- <link rel='stylesheet' href='/css/default.css' />
+  <link rel='stylesheet' href='/css/default.css' />
   <link rel='stylesheet' href='/css/common.css' />
   <link rel='stylesheet' href='/css/indexManager/main.css' />
+  <link rel='stylesheet' href='/css/indexManager/carousel.css' />
   <link rel='stylesheet' href='/lib/bootstrap/css/bootstrap.css' />
   <link rel='stylesheet' href='/lib/bootstrap/css/bootstrap.min.css' />
-   <link rel='stylesheet' href='/lib/swiper/css/swiper.css' />
+  <link rel='stylesheet' href='/lib/swiper/css/swiper.css' />
   <script src="/lib/jquery/jquery-3.3.1.min.js"></script>
   <script src="/lib/bootstrap/js/bootstrap.js"></script>
   <script src="/lib/bootstrap/js/bootstrap.min.js"></script>
@@ -18,7 +19,7 @@
 </head>
 
 <body>
-  <div class="comm-full" >
+  <div class="comm-full">
     <div class="comm-top" ng-controller="navController">
       <div style="height:100%;" ng-include src="'/template/navcom.html'"></div>
     </div>

@@ -103,8 +103,8 @@ define([
                 template: '<div class="swiperDiv">' +
                     '<div class="swiper-container">' +
                     '<ul class="swiper-wrapper">' +
-                    '<li class="swiper-slide" data-swiper-autoplay="2000" ng-repeat="item  in data" ng-model="ID">' +
-                    '<a class="img40"><img ng-src="{{item.imgUrl}}" alt="{{item.text}}"/></a>' +
+                    '<li class="swiper-slide" data-swiper-autoplay="3000" ng-repeat="item  in data" ng-model="ID">' +
+                    '<div class="img40 swiper-zoom-container"><img ng-src="{{item.imgUrl}}" alt="{{item.text}}"/></div>' +
                     '</li>' +
                     '</ul>' +
                     '<div class="swiper-pagination"></div>' +
