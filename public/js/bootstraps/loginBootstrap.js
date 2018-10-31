@@ -1,5 +1,5 @@
 require([
-    'login-module','ctrls/controllers/fullcontroller/loginController'
+    'login-module','ctrls/fullcontroller/loginController'
 ], function () {
     'use strict';
     angular.bootstrap(document, ['loginModule','commonModule']);

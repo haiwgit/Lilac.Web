@@ -2,8 +2,8 @@ define([
     'index-module',
     'common-filter',
     'common-directive',
-    'ctrls/controllers/fullcontroller/indexController',
-    'ctrls/controllers/fullcontroller/blogController'
+    'ctrls/fullcontroller/indexController',
+    'ctrls/fullcontroller/blogController'
 ], function(app) {
     'use strict';
     app.controller('navController',function($scope,$cookies, $state, $http){

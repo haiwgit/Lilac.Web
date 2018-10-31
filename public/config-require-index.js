@@ -11,7 +11,7 @@ require.config({
         'ui-bootstrap-tpls': '/lib/angular-ui-bootstrap/ui-bootstrap-tpls',
         'crypto':'/lib/crypto/crypto-js',
         //配置文件夹
-        'ctrls': '/js',
+        'ctrls': '/js/controllers',
         'images':'/images',
         'css':'/css',
         'template': '/template',
@@ -28,6 +28,8 @@ require.config({
         'common-filter':'/js/filtres/common-filter',
         //自定义指令
         'common-directive':'/js/directives/common-directive',
+        //
+        'dialog':'/services/common/modalCommonService'
 
     },
     shim: {
@@ -37,7 +39,7 @@ require.config({
         'angular-ui-router': ['angular'],
         'ui-bootstrap': ['angular', 'angular-animate'],
         'ui-bootstrap-tpls': ['angular', 'ui-bootstrap'],
-        'common-module': ['angular'],
+        'common-module': ['angular','angular-animate','ui-bootstrap-tpls'],
         'common-filter':['common-module'],
         'common-directive':['common-module'],
         'index-module': ['angular','angular-animate', 'angular-cookies', 'angular-ui-router', 'ui-bootstrap-tpls', 'common-module'],
