@@ -29,8 +29,8 @@ require.config({
         //自定义指令
         'common-directive':'/js/directives/common-directive',
         //
-        'dialog':'/services/common/modalCommonService'
-
+        'dialog':'/services/common/modalCommonService',
+        'messager':'/services/common/messageCommonService'
     },
     shim: {
         'angular': { exports: 'angular' },

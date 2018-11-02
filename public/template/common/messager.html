@@ -1,0 +1,15 @@
+<div class="modal-header">
+    <h4 class="modal-title" ng-cloak="" ng-bind="modal.Title"></h4>
+</div>
+<div class="modal-body">
+    <table>
+        <tr>
+            <td><img ng-src="{{modal.Icon}}"/></td>
+            <td class="modal-messager" ng-bind-html="modal.Text"></td>
+        </tr>
+    </table>
+</div>
+<div ng-if="show.Btns" class="modal-footer">
+    <button ng-if="show.OK" type='button' style="margin:0" class="btn btn-primary modal-btn" ng-click="ok()">确定</button>
+    <button ng-if="show.Cancel" type='button' style="margin:0" class="btn btn-primary modal-btn" ng-click="cancel()">取消</button>
+</div>
