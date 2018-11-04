@@ -1,6 +1,6 @@
 define([
     'common-module'
-], function(app) {
+], function (app) {
     'use strict';
     app.
         directive('draggable', ['$document', function ($document) {
@@ -151,6 +151,46 @@ define([
                     }, 100);
                 },
 
+            }
+        })
+        .directive('newsRolling', function ($timeout) {
+            return {
+                restrict: "EA",
+                scope: {
+                    data: "=",
+                },
+                template: '<div class="new-swper swiper-container">' +
+                    '<ul class="swiper-wrapper">' +
+                    '<li class="swiper-slide" data-swiper-autoplay="2500" ng-repeat="item  in data">' +
+                    '<div class="newitem"><span></span><label ng-bind="item.TEXT"></label></div>' +
+                    '</li>' +
+                    '</ul>' +
+                    '</div>',
+                link: function (scope, element, attrs) {
+                    var selectObj = scope.data[0];
+                    if (attrs.id) {
+                        $timeout(function () {
+                            scope.swiper = new Swiper('#' + attrs.id + ' .swiper-container', {//容器
+                                direction: 'vertical', // 垂直切换选项
+                                loop: true, // 循环模式选项
+                                autoplay: {
+                                    stopOnLastSlide: true,
+                                },//可选选项，自动滑动
+                                grabCursor: true,
+                                slidesPerView: 10,
+                                slidesPerGroup: 1,
+                                spaceBetween: 4,//之间距离
+                                on: {
+                                    click: function () {
+                                        var index = this.activeIndex % scope.data.length;
+                                        selectObj = scope.data[index]
+                                        scope.$parent.showNews(selectObj);
+                                    }
+                                }
+                            })
+                        }, 100)
+                    }
+                }
             }
         })
     return app;
