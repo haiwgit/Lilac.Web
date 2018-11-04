@@ -16,6 +16,16 @@ define(function () {
                 templateUrl: '/template/blogManager/blog.html',
                 controller: 'blogController'
             })
+            .state("pic", {
+                url: "/pic",
+                templateUrl: '/template/picManager/pic.html',
+                controller: 'picController'
+            })
+            .state("video", {
+                url: "/move",
+                templateUrl: '/template/videoManager/video.html',
+                controller: 'videoController'
+            })
         }
     ]);
     return app;

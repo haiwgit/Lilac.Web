@@ -6,9 +6,21 @@
         "moduleCode": 1
     },
     {
+        "title": "图片",
+        "parem": "pic",
+        "rate": "/pic",
+        "moduleCode": 2
+    },
+    {
         "title": "文章",
         "parem": "blog",
         "rate": "/blog",
+        "moduleCode": 2
+    },
+    {
+        "title": "视频",
+        "parem": "video",
+        "rate": "/video",
         "moduleCode": 2
     }
 ]

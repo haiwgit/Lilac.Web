@@ -14,6 +14,7 @@ require.config({
         'ctrls': '/js/controllers',
         'images':'/images',
         'css':'/css',
+        'video':'/video',
         'template': '/template',
         'directive':'/directive',
         'filters':'/filters',

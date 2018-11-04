@@ -23,4 +23,9 @@ define([
             return input;
         };
     })
+    .filter('trustUrl',function($sce){
+        return function (recordingUrl) {
+            return $sce.trustAsResourceUrl(recordingUrl);
+        };
+    })
 });

@@ -3,7 +3,9 @@ define([
     'common-filter',
     'common-directive',
     'ctrls/fullcontroller/indexController',
-    'ctrls/fullcontroller/blogController'
+    'ctrls/fullcontroller/blogController',
+    'ctrls/fullcontroller/picController',
+    'ctrls/fullcontroller/videoController'
 ], function(app) {
     'use strict';
     app.controller('navController',function($scope,$cookies, $state, $http){
