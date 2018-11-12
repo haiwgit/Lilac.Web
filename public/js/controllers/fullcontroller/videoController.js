@@ -2,58 +2,69 @@ define([
     'index-module'
 ], function (app) {
     'use strict';
-    app.controller('videoController', function ($scope, $sce) {
+    app.controller('videoController', function ($scope, $sce,$stateParams) {
         $scope.viewModel = {
 
         }
         $scope.currentVideo = {
-            Text: "视频详情",
-            URL: 'video/勇敢的心.mp4'
+            text: "视频详情",
+            _url: 'video/勇敢的心.mp4',
+            get url() {
+                return $scope.videoUrl(this._url);
+            },
+            set url(value) {
+                this._url = value;
+            },
+            type: 'video/mp4'
         }
         $scope.videoUrl = function (url) {
             return $sce.trustAsResourceUrl(url);
         };
         var option = {
-            autoplay: false,
-            controls: true,
+            "autoplay": false,
+            "controls": true,
             height: 320,
             width: 490,
-            loop: false,
-            poster: "http://vjs.zencdn.net/v/oceans.png",
-            preload: "auto",
-            children: [
-                'bigPlayButton',
-                'controlBar'
-            ],
-            sources: [{
-                src: 'http://vjs.zencdn.net/v/oceans.mp4',//$scope.videoUrl('video/勇敢的心.mp4'),
-                type: 'video/mp4'
-            }],
-            controlBar: {
-                muteToggle: false,
-                captionsButton: false,
-                chaptersButton: false,
-                playbackRateMenuButton: true,
-                LiveDisplay: true,
-                subtitlesButton: false,
-                remainingTimeDisplay: true,
+            "loop": false,
+            poster: 'http://vjs.zencdn.net/v/oceans.png',
+            "preload": "auto",
+            // children: [
+            //     // "mediaLoader",
+            //     "posterImage",
+            //     "textTrackDisplay",
+            //     "loadingSpinner",
+            //     "bigPlayButton",
+            //     "controlBar",
+            //     "errorDisplay",
+            //     "textTrackSettings",
+            //     "resizeManager",
+            // ],
+            // ControlBar:{//控制条
+            //     PlayToggle:{}
+            // }
 
-                progressControl: true,
-
-                volumeMenuButton: {
-                    inline: false,
-                    vertical: true
-                },//竖着的音量条
-                fullscreenToggle: true
-            }
         };
-        var palyer=$scope.palyer = videojs("myVideo", option, function() {
-            videojs.log('播放器已经准备好了!');
-            this.play();
+        var palyer;
+        function initvideo() {
+            palyer = $scope.palyer = videojs("my-video", option, function () {
+                this.on('play', function () {
+                    console.log('start')
+                });
+                this.on('pause', function () {
+                    console.log('zt');
+                });
 
-            this.on('ended', function () {
-                videojs.log('播放结束了!');
-            });
-        })
+                this.on('ended', function () {
+                    this.pause();
+                });
+                this.on('timeupdate', function () {
+                    console.log('geg')
+                })
+            })
+        }
+        $scope.initMe = function () {
+            $scope.palyer = null;
+            initvideo();
+        }
     })
 });

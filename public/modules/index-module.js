@@ -11,19 +11,22 @@ define(function () {
                 templateUrl: '/template/indexManager/main.html',
                 controller: 'indexController'
             })
-            .state("blog", {
-                url: "/blog",
-                templateUrl: '/template/blogManager/blog.html',
-                controller: 'blogController'
-            })
             .state("pic", {
                 url: "/pic",
                 templateUrl: '/template/picManager/pic.html',
+                params: {id:null,type:null},
                 controller: 'picController'
             })
-            .state("video", {
+            .state("blog", {
+                url: "/blog",
+                templateUrl: '/template/blogManager/blog.html',
+                params: {id:null,type:null},
+                controller: 'blogController'
+            })
+            .state("move", {
                 url: "/move",
                 templateUrl: '/template/videoManager/video.html',
+                params: {id:null,type:null},
                 controller: 'videoController'
             })
         }

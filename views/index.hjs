@@ -18,7 +18,7 @@
   <script src="/lib/bootstrap/js/bootstrap.js"></script>
   <script src="/lib/bootstrap/js/bootstrap.min.js"></script>
   <script src="/lib/swiper/js/swiper.min.js"></script>
-  <script src="/lib/video/video.min.js"></script>
+  <script src="/lib/video/video.js"></script>
   <script src="/lib/require.js" defer async data-main="config-require-index.js"></script>
 </head>
 

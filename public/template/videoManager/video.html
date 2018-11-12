@@ -1,14 +1,16 @@
-<div class="main-full">
+<div class="main-full" ng-init="initMe()">
     <div class="video-full scroll">
         <div class="video-left"></div>
         <div class="video-right">
             <div class="video-right-first">
                 <div class="div-video">
                     <div class="div-video-top">
-                        <label ng-bind="currentVideo.Text"></label>
+                        <label ng-bind="currentVideo.text"></label>
                     </div>
                     <div class="div-video-body">
-                        <video id="myVideo" class="video-js vjs-default-skin"></video>
+                        <video id="my-video" class="video-js vjs-default-skin vjs-fill vjs-big-play-centered">
+                            <source src="video/勇敢的心.mp4" type="video/mp4">
+                        </video>
                     </div>
                 </div>
             </div>

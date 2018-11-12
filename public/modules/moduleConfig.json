@@ -15,12 +15,12 @@
         "title": "文章",
         "parem": "blog",
         "rate": "/blog",
-        "moduleCode": 2
+        "moduleCode": 3
     },
     {
         "title": "视频",
-        "parem": "video",
-        "rate": "/video",
-        "moduleCode": 2
+        "parem": "move",
+        "rate": "/move",
+        "moduleCode": 4
     }
 ]

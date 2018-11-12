@@ -1,9 +1,9 @@
 define([
-    'index-module', 'dialog', 'messager',
+    'index-module', 'routerService','dialog', 'messager',
     'ctrls/indexManager/picManger/userController'
 ], function (app) {
     'use strict';
-    app.controller('indexController', function ($scope, $cookies, $window, $http, dialog, messager) {
+    app.controller('indexController', function ($scope, $cookies, $window, $http, routerService,dialog, messager) {
         $scope.slides = [];
         $scope.slides.push({ imgUrl: '/images/index/carousel/1.jpg', ContenURL: "", ID: 13, text: '亲爱的你，情人节快乐' });
         $scope.slides.push({ imgUrl: '/images/index/carousel/2.jpg', ContenURL: "", ID: 131, text: '亲爱的你，情人节快乐' });
@@ -30,8 +30,8 @@ define([
                 animation: true,
                 backdrop: 'static',
                 width: 500,
-                data:parm,
-                type:'news'
+                data: parm,
+                type: 'news'
             }
             $scope.newView();
         }
@@ -62,5 +62,13 @@ define([
         $scope.error = function () {
             messager.error('错误信息');
         }
+        $scope.redirect= function (item,code) {
+            routerService.go({
+                parem: item,
+                rate: "/"+item,
+                moduleCode:code
+            },{id:0,type:12});
+        }
+
     })
 });

@@ -22,6 +22,7 @@ require.config({
         //公共服务
         'config':'/services/config-service',
         'http':'/services/common/httpCommonService',
+        'routerService':'/services/common/routerService',
         //模块文件
         'common-module': '/modules/common-module',
         'index-module': '/modules/index-module',
