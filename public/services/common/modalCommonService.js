@@ -11,7 +11,7 @@ define([
                     init(w, h, size, full)
                 }, 30);
                 return;
-            } 
+            }
 
             var element = angular.element(modals[0]);
             if (full) {
@@ -29,13 +29,14 @@ define([
                 })
             } else {
                 if (w > 0) {
-                    element.css({ 'width': w + 'px' })
+                    element.css({'width': w + 'px'})
                 }
                 if (h > 0) {
-                    element.css({ 'height': h + 'px' })
+                    element.css({'height': h + 'px'})
                 }
             }
         }
+
         var dialog = {
             open: function (param) {
                 var full = typeof param.full == 'boolean' ? param.full : false;

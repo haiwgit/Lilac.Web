@@ -1,6 +1,6 @@
 require([
-    'index-module','ctrls/navController'
+    'index-module', 'ctrls/navController'
 ], function () {
     'use strict';
-    angular.bootstrap(document, ['indexModule','commonModule']);
+    angular.bootstrap(document, ['indexModule', 'commonModule']);
 })

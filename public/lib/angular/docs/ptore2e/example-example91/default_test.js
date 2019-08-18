@@ -1,20 +1,20 @@
-describe("", function() {
-  var rootEl;
-  beforeEach(function() {
-    rootEl = browser.rootEl;
-    browser.get("build/docs/examples/example-example91/index.html");
-  });
-  
-var thumbsUp = element(by.css('span.glyphicon-thumbs-up'));
-var thumbsDown = element(by.css('span.glyphicon-thumbs-down'));
+describe("", function () {
+    var rootEl;
+    beforeEach(function () {
+        rootEl = browser.rootEl;
+        browser.get("build/docs/examples/example-example91/index.html");
+    });
 
-it('should check ng-show / ng-hide', function() {
-  expect(thumbsUp.isDisplayed()).toBeFalsy();
-  expect(thumbsDown.isDisplayed()).toBeTruthy();
+    var thumbsUp = element(by.css('span.glyphicon-thumbs-up'));
+    var thumbsDown = element(by.css('span.glyphicon-thumbs-down'));
 
-  element(by.model('checked')).click();
+    it('should check ng-show / ng-hide', function () {
+        expect(thumbsUp.isDisplayed()).toBeFalsy();
+        expect(thumbsDown.isDisplayed()).toBeTruthy();
 
-  expect(thumbsUp.isDisplayed()).toBeTruthy();
-  expect(thumbsDown.isDisplayed()).toBeFalsy();
-});
+        element(by.model('checked')).click();
+
+        expect(thumbsUp.isDisplayed()).toBeTruthy();
+        expect(thumbsDown.isDisplayed()).toBeFalsy();
+    });
 });

@@ -1,8 +1,8 @@
 define([
     'index-module'
-], function(app) {
+], function (app) {
     'use strict';
-    app.controller('picController',function($scope){
+    app.controller('picController', function ($scope) {
 
     })
 });

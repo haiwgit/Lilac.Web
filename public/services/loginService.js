@@ -1,5 +1,5 @@
 define(['login-module', 'config'
-], function (app,config) {
+], function (app, config) {
     'use strict';
     app.factory('loginService', function ($http) {
         var svc = {
@@ -12,7 +12,7 @@ define(['login-module', 'config'
                     });
             },
             getString: function (name, callBack) {
-                return $http.get(config.getAddress() + '/Sys/Auth/GetString', { params: { name: name } });
+                return $http.get(config.getAddress() + '/Sys/Auth/GetString', {params: {name: name}});
             },
         };
         return svc;

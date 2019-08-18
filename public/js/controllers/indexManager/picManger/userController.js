@@ -1,8 +1,8 @@
 define([
     'index-module'
-], function(app) {
+], function (app) {
     'use strict';
-    app.controller('userController',function($scope,items){
-        var x=items
+    app.controller('userController', function ($scope, items) {
+        var x = items
     })
 });

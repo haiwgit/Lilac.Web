@@ -1,6 +1,6 @@
 define([
     'common-module'
-], function(app) {
+], function (app) {
     'use strict';
     app.filter('limitLength', function () {
         return function (input, len) {
@@ -23,9 +23,9 @@ define([
             return input;
         };
     })
-    .filter('trustUrl',function($sce){
-        return function (recordingUrl) {
-            return $sce.trustAsResourceUrl(recordingUrl);
-        };
-    })
+        .filter('trustUrl', function ($sce) {
+            return function (recordingUrl) {
+                return $sce.trustAsResourceUrl(recordingUrl);
+            };
+        })
 });

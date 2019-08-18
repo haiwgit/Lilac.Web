@@ -1,26 +1,27 @@
-(function(angular) {
-  'use strict';
-function Person(name, gender) {
-  this.name = name;
-  this.gender = gender;
-}
+(function (angular) {
+    'use strict';
 
-angular.module('messageFormatExample', ['ngMessageFormat'])
-  .controller('ckCtrl', function ($scope, $injector, $parse) {
-    var people = [ new Person("Alice", "female"),
-                   new Person("Bob", "male"),
-                   new Person("Charlie", "male") ];
+    function Person(name, gender) {
+        this.name = name;
+        this.gender = gender;
+    }
 
-    $scope.sender = new Person("Harry Potter", "male");
-    $scope.recipients = people.slice();
+    angular.module('messageFormatExample', ['ngMessageFormat'])
+        .controller('ckCtrl', function ($scope, $injector, $parse) {
+            var people = [new Person("Alice", "female"),
+                new Person("Bob", "male"),
+                new Person("Charlie", "male")];
 
-    $scope.setNumRecipients = function(n) {
-      n = n > people.length ? people.length : n;
-      $scope.recipients = people.slice(0, n);
-    };
+            $scope.sender = new Person("Harry Potter", "male");
+            $scope.recipients = people.slice();
 
-    $scope.setGender = function(person, gender) {
-      person.gender = gender;
-    };
-  });
+            $scope.setNumRecipients = function (n) {
+                n = n > people.length ? people.length : n;
+                $scope.recipients = people.slice(0, n);
+            };
+
+            $scope.setGender = function (person, gender) {
+                person.gender = gender;
+            };
+        });
 })(window.angular);

@@ -1,4 +1,4 @@
-<div class="main-full scroll">
+<div class="main-full scroll" ng-init="initMe()">
     <div class="main-first">
         <div class="first-left">
             <div class="top-div">
@@ -15,7 +15,7 @@
                 </div>
             </div>
             <div class="center-div swipersDiv" style="padding:3px 5px;background-color:lightyellow">
-                <swipers class="pic" data="slides"></swipers>
+                <swipers disable-on-interaction='false' class="pic" data="slides"></swipers>
             </div>
         </div>
         <div class="first-center">
@@ -34,7 +34,7 @@
                 </div>
             </div>
             <div class="center-div">
-                <news-rolling id='newsId' data='news'></news-rolling>
+                <news-rolling disable-on-interaction='false' id='newsId' data='news'></news-rolling>
             </div>
         </div>
         <div class="first-right">
@@ -54,6 +54,30 @@
             <div class="center-div"></div>
         </div>
     </div>
-    <div class="main-second"></div>
+    <div class="main-second">
+        <div class="second-top">
+            <div class="title-div">
+                <div class="title-left">
+                    <div class="circle-title" style="border: 1px solid white;background-color: white"></div>
+                    <div class="circle-title"></div>
+                </div>
+                <div class="title-center">D3实例欣赏</div>
+            </div>
+        </div>
+        <div class="second-center">
+            <div class="second-one">
+                <div id="gear"></div>
+            </div>
+            <div class="second-one">
+                <div id="loadId"></div>
+            </div>
+            <div class="second-one">
+                <canvas id="myCanvas" width="300" height="300"></canvas>
+            </div>
+            <div class="second-one">
+                <canvas id="Canvas" width="300" height="300"></canvas>
+            </div>
+        </div>
+    </div>
     <div class="main-third"></div>
 </div>

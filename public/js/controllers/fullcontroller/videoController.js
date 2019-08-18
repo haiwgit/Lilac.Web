@@ -2,10 +2,8 @@ define([
     'index-module'
 ], function (app) {
     'use strict';
-    app.controller('videoController', function ($scope, $sce,$stateParams) {
-        $scope.viewModel = {
-
-        }
+    app.controller('videoController', function ($scope, $sce, $stateParams) {
+        $scope.viewModel = {}
         $scope.currentVideo = {
             text: "视频详情",
             _url: 'video/勇敢的心.mp4',
@@ -45,6 +43,7 @@ define([
 
         };
         var palyer;
+
         function initvideo() {
             palyer = $scope.palyer = videojs("my-video", option, function () {
                 this.on('play', function () {
@@ -62,6 +61,7 @@ define([
                 })
             })
         }
+
         $scope.initMe = function () {
             $scope.palyer = null;
             initvideo();

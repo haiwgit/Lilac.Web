@@ -1,23 +1,24 @@
-<a href='https://github.com/angular/angular.js/edit/v1.5.x/docs/content/tutorial/step_08.ngdoc?message=docs(tutorial%2F8 - Templating Links & Images)%3A%20describe%20your%20change...' class='improve-docs btn btn-primary'><i class="glyphicon glyphicon-edit">&nbsp;</i>Improve this Doc</a>
+<a href='https://github.com/angular/angular.js/edit/v1.5.x/docs/content/tutorial/step_08.ngdoc?message=docs(tutorial%2F8 - Templating Links & Images)%3A%20describe%20your%20change...'
+   class='improve-docs btn btn-primary'><i class="glyphicon glyphicon-edit">&nbsp;</i>Improve this Doc</a>
 
 
 <ul doc-tutorial-nav="8"></ul>
 
 
 <p>In this step, we will add thumbnail images for the phones in the phone list, and links that, for
-now, will go nowhere. In subsequent steps, we will use the links to display additional information
-about the phones in the catalog.</p>
+    now, will go nowhere. In subsequent steps, we will use the links to display additional information
+    about the phones in the catalog.</p>
 <ul>
-<li>There are now links and images of the phones in the list.</li>
+    <li>There are now links and images of the phones in the list.</li>
 </ul>
 <div doc-tutorial-reset="8"></div>
 
 
 <h2 id="data">Data</h2>
 <p>Note that the <code>phones.json</code> file contains unique IDs and image URLs for each of the phones. The
-URLs point to the <code>app/img/phones/</code> directory.</p>
-<p><br />
-<strong><code>app/phones/phones.json</code></strong> (sample snippet):</p>
+    URLs point to the <code>app/img/phones/</code> directory.</p>
+<p><br/>
+    <strong><code>app/phones/phones.json</code></strong> (sample snippet):</p>
 <pre><code class="lang-json">[
   {
     ...
@@ -30,8 +31,8 @@ URLs point to the <code>app/img/phones/</code> directory.</p>
 ]
 </code></pre>
 <h2 id="component-template">Component Template</h2>
-<p><br />
-<strong><code>app/phone-list/phone-list.template.html</code>:</strong></p>
+<p><br/>
+    <strong><code>app/phone-list/phone-list.template.html</code>:</strong></p>
 <pre><code class="lang-html">...
 &lt;ul class=&quot;phones&quot;&gt;
   &lt;li ng-repeat=&quot;phone in $ctrl.phones | filter:$ctrl.query | orderBy:$ctrl.orderProp&quot; class=&quot;thumbnail&quot;&gt;
@@ -45,18 +46,20 @@ URLs point to the <code>app/img/phones/</code> directory.</p>
 ...
 </code></pre>
 <p>To dynamically generate links that will in the future lead to phone detail pages, we used the
-now-familiar double-curly brace binding in the <code>href</code> attribute values. In step 2, we added the
-<code>{{phone.name}}</code> binding as the element content. In this step the <code>{{phone.id}}</code> binding is used in
-the element attribute.</p>
+    now-familiar double-curly brace binding in the <code>href</code> attribute values. In step 2, we added the
+    <code>{{phone.name}}</code> binding as the element content. In this step the <code>{{phone.id}}</code> binding is
+    used in
+    the element attribute.</p>
 <p>We also added phone images next to each record using an image tag with the <a href="api/ng/directive/ngSrc">ngSrc</a>
-directive. That directive prevents the browser from treating the Angular <code>{{ expression }}</code> markup
-literally, and initiating a request to an invalid URL (<code>http://localhost:8000/{{phone.imageUrl}}</code>),
-which it would have done if we had only specified an attribute binding in a regular <code>src</code> attribute
-(<code>&lt;img src=&quot;{{phone.imageUrl}}&quot;&gt;</code>). Using the <code>ngSrc</code> directive, prevents the browser from making an
-HTTP request to an invalid location.</p>
+    directive. That directive prevents the browser from treating the Angular <code>{{ expression }}</code> markup
+    literally, and initiating a request to an invalid URL (<code>http://localhost:8000/{{phone.imageUrl}}</code>),
+    which it would have done if we had only specified an attribute binding in a regular <code>src</code> attribute
+    (<code>&lt;img src=&quot;{{phone.imageUrl}}&quot;&gt;</code>). Using the <code>ngSrc</code> directive, prevents the
+    browser from making an
+    HTTP request to an invalid location.</p>
 <h1 id="testing">Testing</h1>
-<p><br />
-<strong><code>e2e-tests/scenarios.js</code></strong>:</p>
+<p><br/>
+    <strong><code>e2e-tests/scenarios.js</code></strong>:</p>
 <pre><code class="lang-js">...
 
 it(&#39;should render phone specific links&#39;, function() {
@@ -70,23 +73,26 @@ it(&#39;should render phone specific links&#39;, function() {
 ...
 </code></pre>
 <p>We added a new E2E test to verify that the application is generating correct links to the phone
-views, that we will implement in the upcoming steps.</p>
+    views, that we will implement in the upcoming steps.</p>
 <p>You can now rerun <code>npm run protractor</code> to see the tests run.</p>
 <h1 id="experiments">Experiments</h1>
 <div></div>
 
 <ul>
-<li><p>Replace the <code>ngSrc</code> directive with a plain old <code>src</code> attribute. Using tools such as your browser&#39;s
-developer tools or inspecting the web server access logs, confirm that the application is indeed
-making an extraneous request to <code>%7B%7Bphone.imageUrl%7D%7D</code> (or <code>{{phone.imageUrl}}</code>).</p>
-<p>The issue here is that the browser will fire a request for that invalid image address as soon as
-it hits the <code>&lt;img&gt;</code> tag, which is before Angular has a chance to evaluate the expression and
-inject the valid address.</p>
-</li>
+    <li><p>Replace the <code>ngSrc</code> directive with a plain old <code>src</code> attribute. Using tools such as
+        your browser&#39;s
+        developer tools or inspecting the web server access logs, confirm that the application is indeed
+        making an extraneous request to <code>%7B%7Bphone.imageUrl%7D%7D</code> (or <code>{{phone.imageUrl}}</code>).
+    </p>
+        <p>The issue here is that the browser will fire a request for that invalid image address as soon as
+            it hits the <code>&lt;img&gt;</code> tag, which is before Angular has a chance to evaluate the expression
+            and
+            inject the valid address.</p>
+    </li>
 </ul>
 <h1 id="summary">Summary</h1>
 <p>Now that you have added phone images and links, go to <a href="tutorial/step_09">step 9</a> to learn about Angular
-layout templates and how Angular makes it easy to create applications that have multiple views.</p>
+    layout templates and how Angular makes it easy to create applications that have multiple views.</p>
 <ul doc-tutorial-nav="8"></ul>
 
 

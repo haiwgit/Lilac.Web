@@ -13,9 +13,9 @@
         regConfigs = [],
         modulesToLoad = [],
         // modules to load from angular.module or other sources
-    realModules = [],
+        realModules = [],
         // real modules called from angular.module
-    recordDeclarations = [],
+        recordDeclarations = [],
         broadcast = angular.noop,
         runBlocks = {},
         justLoaded = [];
@@ -25,13 +25,13 @@
     ocLazyLoad.provider('$ocLazyLoad', ["$controllerProvider", "$provide", "$compileProvider", "$filterProvider", "$injector", "$animateProvider", function ($controllerProvider, $provide, $compileProvider, $filterProvider, $injector, $animateProvider) {
         var modules = {},
             providers = {
-            $controllerProvider: $controllerProvider,
-            $compileProvider: $compileProvider,
-            $filterProvider: $filterProvider,
-            $provide: $provide, // other things (constant, decorator, provider, factory, service)
-            $injector: $injector,
-            $animateProvider: $animateProvider
-        },
+                $controllerProvider: $controllerProvider,
+                $compileProvider: $compileProvider,
+                $filterProvider: $filterProvider,
+                $provide: $provide, // other things (constant, decorator, provider, factory, service)
+                $injector: $injector,
+                $animateProvider: $animateProvider
+            },
             debug = false,
             events = false,
             moduleCache = [],
@@ -75,8 +75,8 @@
                     names = ['ng:app', 'ng-app', 'x-ng-app', 'data-ng-app'],
                     NG_APP_CLASS_REGEXP = /\sng[:\-]app(:\s*([\w\d_]+);?)?\s/,
                     append = function append(elm) {
-                    return elm && elements.push(elm);
-                };
+                        return elm && elements.push(elm);
+                    };
 
                 angular.forEach(names, function (name) {
                     names[name] = true;
@@ -654,8 +654,8 @@
                                 if (modulesToLoad.length > 0) {
                                     loadNext(modulesToLoad.shift()); // load the next in list
                                 } else {
-                                        deferred.resolve(res); // everything has been loaded, resolve
-                                    }
+                                    deferred.resolve(res); // everything has been loaded, resolve
+                                }
                             }, function error(err) {
                                 deferred.reject(err);
                             });
@@ -836,16 +836,16 @@
                     loaded,
                     filesCache = $delegate._getFilesCache(),
                     cacheBuster = function cacheBuster(url) {
-                    var dc = new Date().getTime();
-                    if (url.indexOf('?') >= 0) {
-                        if (url.substring(0, url.length - 1) === '&') {
-                            return url + '_dc=' + dc;
+                        var dc = new Date().getTime();
+                        if (url.indexOf('?') >= 0) {
+                            if (url.substring(0, url.length - 1) === '&') {
+                                return url + '_dc=' + dc;
+                            }
+                            return url + '&_dc=' + dc;
+                        } else {
+                            return url + '?_dc=' + dc;
                         }
-                        return url + '&_dc=' + dc;
-                    } else {
-                        return url + '?_dc=' + dc;
-                    }
-                };
+                    };
 
                 // Store the promise early so the file load can be detected by other parallel lazy loads
                 // (ie: multiple routes on one page) a 'true' value isn't sufficient
@@ -1291,64 +1291,64 @@
 })(angular);
 // Array.indexOf polyfill for IE8
 if (!Array.prototype.indexOf) {
-        Array.prototype.indexOf = function (searchElement, fromIndex) {
-                var k;
+    Array.prototype.indexOf = function (searchElement, fromIndex) {
+        var k;
 
-                // 1. Let O be the result of calling ToObject passing
-                //    the this value as the argument.
-                if (this == null) {
-                        throw new TypeError('"this" is null or not defined');
-                }
+        // 1. Let O be the result of calling ToObject passing
+        //    the this value as the argument.
+        if (this == null) {
+            throw new TypeError('"this" is null or not defined');
+        }
 
-                var O = Object(this);
+        var O = Object(this);
 
-                // 2. Let lenValue be the result of calling the Get
-                //    internal method of O with the argument "length".
-                // 3. Let len be ToUint32(lenValue).
-                var len = O.length >>> 0;
+        // 2. Let lenValue be the result of calling the Get
+        //    internal method of O with the argument "length".
+        // 3. Let len be ToUint32(lenValue).
+        var len = O.length >>> 0;
 
-                // 4. If len is 0, return -1.
-                if (len === 0) {
-                        return -1;
-                }
+        // 4. If len is 0, return -1.
+        if (len === 0) {
+            return -1;
+        }
 
-                // 5. If argument fromIndex was passed let n be
-                //    ToInteger(fromIndex); else let n be 0.
-                var n = +fromIndex || 0;
+        // 5. If argument fromIndex was passed let n be
+        //    ToInteger(fromIndex); else let n be 0.
+        var n = +fromIndex || 0;
 
-                if (Math.abs(n) === Infinity) {
-                        n = 0;
-                }
+        if (Math.abs(n) === Infinity) {
+            n = 0;
+        }
 
-                // 6. If n >= len, return -1.
-                if (n >= len) {
-                        return -1;
-                }
+        // 6. If n >= len, return -1.
+        if (n >= len) {
+            return -1;
+        }
 
-                // 7. If n >= 0, then Let k be n.
-                // 8. Else, n<0, Let k be len - abs(n).
-                //    If k is less than 0, then let k be 0.
-                k = Math.max(n >= 0 ? n : len - Math.abs(n), 0);
+        // 7. If n >= 0, then Let k be n.
+        // 8. Else, n<0, Let k be len - abs(n).
+        //    If k is less than 0, then let k be 0.
+        k = Math.max(n >= 0 ? n : len - Math.abs(n), 0);
 
-                // 9. Repeat, while k < len
-                while (k < len) {
-                        // a. Let Pk be ToString(k).
-                        //   This is implicit for LHS operands of the in operator
-                        // b. Let kPresent be the result of calling the
-                        //    HasProperty internal method of O with argument Pk.
-                        //   This step can be combined with c
-                        // c. If kPresent is true, then
-                        //    i.  Let elementK be the result of calling the Get
-                        //        internal method of O with the argument ToString(k).
-                        //   ii.  Let same be the result of applying the
-                        //        Strict Equality Comparison Algorithm to
-                        //        searchElement and elementK.
-                        //  iii.  If same is true, return k.
-                        if (k in O && O[k] === searchElement) {
-                                return k;
-                        }
-                        k++;
-                }
-                return -1;
-        };
+        // 9. Repeat, while k < len
+        while (k < len) {
+            // a. Let Pk be ToString(k).
+            //   This is implicit for LHS operands of the in operator
+            // b. Let kPresent be the result of calling the
+            //    HasProperty internal method of O with argument Pk.
+            //   This step can be combined with c
+            // c. If kPresent is true, then
+            //    i.  Let elementK be the result of calling the Get
+            //        internal method of O with the argument ToString(k).
+            //   ii.  Let same be the result of applying the
+            //        Strict Equality Comparison Algorithm to
+            //        searchElement and elementK.
+            //  iii.  If same is true, return k.
+            if (k in O && O[k] === searchElement) {
+                return k;
+            }
+            k++;
+        }
+        return -1;
+    };
 }

@@ -1,4 +1,4 @@
-.varouselDiv{
+.varouselDiv {
     position: relative;
     width: 100%;
     height: 100%;
@@ -6,110 +6,131 @@
     overflow: hidden;
     border-radius: 3px;
 }
-.li-img{
+
+.li-img {
     width: 100%;
     height: auto;
 }
-.leftButton{
+
+.leftButton {
     position: absolute;
-    top:45%;
+    top: 45%;
 }
-.rightButton{
+
+.rightButton {
     position: absolute;
     top: 45%;
     right: 0
 }
-@-webkit-keyframes left-hide{
-    from{
-        margin-left:0 
+
+@-webkit-keyframes left-hide {
+    from {
+        margin-left: 0
     }
-    to{
+    to {
         margin-left: -100%;
     }
 }
-@-webkit-keyframes left-show{
-    from{
+
+@-webkit-keyframes left-show {
+    from {
         margin-left: -100%;
     }
-    to{
-        margin-left: 0;
-    }
-}
-@-webkit-keyframes right-hide{
-    from{
-        margin-left:0 
-    }
-    to{
-        margin-left: 100%;
-    }
-}
-@-webkit-keyframes right-show{
-    from{
-        margin-left: 100%;
-    }
-    to{
+    to {
         margin-left: 0;
     }
 }
 
-.left-animation{
+@-webkit-keyframes right-hide {
+    from {
+        margin-left: 0
+    }
+    to {
+        margin-left: 100%;
+    }
+}
+
+@-webkit-keyframes right-show {
+    from {
+        margin-left: 100%;
+    }
+    to {
+        margin-left: 0;
+    }
+}
+
+.left-animation {
     height: auto;
     position: absolute;
-    top:0;
+    top: 0;
     width: 100%;
     overflow: hidden;
 }
-.left-animation .ng-hide-add{
+
+.left-animation .ng-hide-add {
     animation: left-hide 1s;
 }
-.left-animation .ng-hide-remove{
+
+.left-animation .ng-hide-remove {
     animation: left-show 1s;
 }
-.right-animation{
+
+.right-animation {
     height: auto;
     width: 100%;
     position: absolute;
-    top:0;
+    top: 0;
     overflow: hidden;
 }
-.right-animation .ng-hide-add{
+
+.right-animation .ng-hide-add {
     animation: right-hide 1s;
 }
-.right-animation .ng-hide-remove{
+
+.right-animation .ng-hide-remove {
     animation: right-show 1s;
 }
-.swiperbut{
+
+.swiperbut {
     animation: swiperbutton 1s;
 }
-@-webkit-keyframes swiperbutton{
-    from{
-        opacity:0 
+
+@-webkit-keyframes swiperbutton {
+    from {
+        opacity: 0
     }
-    to{
-        opacity:0 
+    to {
+        opacity: 0
     }
 }
-.swipersDiv{    
+
+.swipersDiv {
 }
-.swipersDiv ul{
+
+.swipersDiv ul {
     padding: 0px;
 }
-.swipersDiv ul li{
+
+.swipersDiv ul li {
     list-style: none;
 }
-.swiperDiv .swiper-container{
+
+.swiperDiv .swiper-container {
     border-radius: 5px;
 }
-.new-swper{
+
+.new-swper {
     width: 100%;
     height: 100%;
 }
+
 .new-swper ul {
     width: 100%;
     height: 100%;
     padding: 5px 0px;
 }
-.new-swper ul li{
+
+.new-swper ul li {
     width: 100%;
     float: left;
     height: 28px;

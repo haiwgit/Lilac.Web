@@ -1,8 +1,8 @@
 define([
-    'login-module','crypto','services/loginService'
-], function(app,crypto) {
+    'login-module', 'crypto', 'services/loginService'
+], function (app, crypto) {
     'use strict';
-    app.controller('loginController',function($scope,$cookies,loginService){
+    app.controller('loginController', function ($scope, $cookies, loginService) {
         var userModel = {
             account: '',
             password: '',
@@ -25,10 +25,12 @@ define([
                         $scope.login();
                     else if (userModel.account)
                         document.getElementById(next).focus();
-                };
+                }
+                ;
                 if (next == 'submit' && userModel.account && userModel.password) {
                     $scope.login();
-                };
+                }
+                ;
             }
         };
         //记住我

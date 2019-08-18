@@ -24,7 +24,8 @@ define([
             AbortRetyIgnore: 7
 
         });
-    function messagerController($scope, $uibModalInstance, $timeout,$sce, MessagerIcon, MessagerButton, values) {
+
+    function messagerController($scope, $uibModalInstance, $timeout, $sce, MessagerIcon, MessagerButton, values) {
         $scope.ok = function () {
             if (typeof values.callback === 'function') {
                 values.callback();
@@ -73,47 +74,49 @@ define([
                 $scope.show.Cancel = true;
                 break;
         }
-        if(values.autoClose){
-            $timeout(function(){
+        if (values.autoClose) {
+            $timeout(function () {
                 $uibModalInstance.dismiss();
-            },values.millisec||1200)
-        }else{
-            $scope.show.Btns=true;
+            }, values.millisec || 1200)
+        } else {
+            $scope.show.Btns = true;
         }
     }
-    function messagerService($uibModal,MessagerIcon,MessagerButton) {
-        var messager={
-            alert:function(msg,millisec){
-                showMessager($uibModal,'提示信息',msg,millisec,MessagerIcon.Information,MessagerButton.OK);
+
+    function messagerService($uibModal, MessagerIcon, MessagerButton) {
+        var messager = {
+            alert: function (msg, millisec) {
+                showMessager($uibModal, '提示信息', msg, millisec, MessagerIcon.Information, MessagerButton.OK);
             },
-            confirm:function(msg,callback,cancelCallback){
-                showMessager($uibModal,'提示信息',msg,0,MessagerIcon.Question,MessagerButton.OKCancel,callback,cancelCallback);
+            confirm: function (msg, callback, cancelCallback) {
+                showMessager($uibModal, '提示信息', msg, 0, MessagerIcon.Question, MessagerButton.OKCancel, callback, cancelCallback);
             },
-            error:function(msg,millisec){
-                showMessager($uibModal,'警告',msg,millisec,MessagerIcon.Errro,MessagerButton.OK);
+            error: function (msg, millisec) {
+                showMessager($uibModal, '警告', msg, millisec, MessagerIcon.Errro, MessagerButton.OK);
             }
-            
+
         }
         return messager;
     }
-    function showMessager(modal,title,msg,millisec,icon,btns,callback,cancelCallback){
-        var autoClose=millisec!==0;
+
+    function showMessager(modal, title, msg, millisec, icon, btns, callback, cancelCallback) {
+        var autoClose = millisec !== 0;
         modal.open({
-            templateUrl:'template/common/messager.html',
-            backdrop:'static',
-            size:400,
-            controller:'messager-controller',
-            resolve:{
-                values:function(){
-                    return{
-                        title:title,
-                        msg:msg,
-                        millisec:millisec,
-                        autoClose,autoClose,
-                        icon:icon,
-                        btns:btns,
-                        callback:callback,
-                        cancelCallback:cancelCallback
+            templateUrl: 'template/common/messager.html',
+            backdrop: 'static',
+            size: 400,
+            controller: 'messager-controller',
+            resolve: {
+                values: function () {
+                    return {
+                        title: title,
+                        msg: msg,
+                        millisec: millisec,
+                        autoClose, autoClose,
+                        icon: icon,
+                        btns: btns,
+                        callback: callback,
+                        cancelCallback: cancelCallback
                     }
                 }
             }

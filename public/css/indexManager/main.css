@@ -1,23 +1,26 @@
-.main-full{
+.main-full {
     width: 100%;
     height: 100%;
     overflow-y: auto;
     overflow-x: hidden;
 }
-.main-first{
+
+.main-first {
     width: 100%;
     height: 385px;
     display: flex;
     padding: 3px 0px;
     background-color: lavender;
 }
-.first-left{
+
+.first-left {
     width: 490px;
     height: 100%;
     padding-left: 2px;
     background-color: white;
 }
-.first-center{
+
+.first-center {
     width: calc(50% - 250px);
     width: -moz-calc(50% - 250px);
     width: -webkit-calc(50% - 250px);
@@ -25,7 +28,8 @@
     margin-left: 3px;
     height: 100%;
 }
-.first-right{
+
+.first-right {
     width: calc(50% - 250px);
     width: -moz-calc(50% - 250px);
     width: -webkit-calc(50% - 250px);
@@ -33,49 +37,112 @@
     margin-left: 3px;
     height: 100%;
 }
-.main-second{
+
+.main-second {
     width: 100%;
     height: 400px;
 }
-.main-third{
+.second-top{
+    width: 100%;
+    height: 40px;
+}
+.second-top .title-div{
+    width: 240px;
+    height: 100%;
+    border-bottom-right-radius: 40px;
+    background: #3da8fa;
+    color: white;
+    line-height: 40px;
+    padding: 4px 2px;
+    display: flex;
+}
+.title-left{
+    width: 20px;
+    height: calc(100% - 6px);
+    height: -moz-calc(100% - 6px);
+    height: -webkit-calc(100% - 6px);
+    margin: 3px auto;
+    border-left: 2px solid #F08300;
+    padding: 1px 0px;
+}
+.title-center{
+    width: calc(100% - 20px);
+    width: -moz-calc(100% - 20px);
+    width: -webkit-calc(100% - 20px);
+    height: 100%;
+    cursor: default;
+}
+.circle-title {
+    width: 8px;
+    height: 8px;
+    margin: 4px auto;
+    border-radius: 4px;
+    background-color: #F08300;
+}
+.second-center{
+    width: 100%;
+    height: calc(100% - 40px);
+    height: -moz-calc(100% - 40px);
+    height: -webkit-calc(100% - 40px);
+    display: flex;
+}
+.second-one{
+    width: 360px;
+    height: 100%;
+}
+#gear{
+    width: 100%;
+    height: 100%;
+}
+#loadId{
+    width: 100%;
+    height: 100%;
+}
+.main-third {
     width: 100%;
     height: 400px;
 }
-.top-div{
+
+.top-div {
     width: 100%;
     height: 32px;
     position: relative;
 }
-.top-div label{
+
+.top-div label {
     height: 100%;
     margin-left: 10px;
     line-height: 30px;
     text-align: center;
     font-weight: 500;
 }
-.center-div{
+
+.center-div {
     width: 100%;
     height: calc(100% - 32px);
     height: -moz-calc(100% - 32px);
     height: -webkit-calc(100% - 32px);
 }
-.first-tab-left{
+
+.first-tab-left {
     width: 105px;
     height: 100%;
     padding: 1px 0px;
     display: flex;
     margin-left: 5px;
 }
-.first-tab-right{
+
+.first-tab-right {
     position: absolute;
     width: 95px;
     height: 100%;
     padding: 1px 0px;
     display: flex;
     right: 10px;
-    top:0px;
+    top: 0px;
 }
-.tab-left{
+
+.tab-left {
     width: 20px;
     height: calc(100% - 6px);
     height: -moz-calc(100% - 6px);
@@ -83,23 +150,28 @@
     margin: 3px auto;
     border-left: 2px solid #3da8fa;
 }
-.circle-div{
+
+.circle-div {
     width: 8px;
     height: 8px;
     margin: 4px auto;
     border-radius: 4px;
     background-color: #3da8fa;
+    cursor: default;
 }
-.top-label{
+
+.top-label {
     width: 100%;
     color: #3da8fa;
     margin-right: 2px;
     padding-top: 6px;
 }
-.top-label:hover{
+
+.top-label:hover {
     text-decoration: underline;
 }
-.tab-center{
+
+.tab-center {
     height: 100%;
     width: 100%;
     line-height: 30px;
@@ -108,18 +180,20 @@
     color: #3da8fa
 }
 
-#newsId{
+#newsId {
     width: 100%;
     height: 100%;
 }
-.newitem{
+
+.newitem {
     width: 100%;
     height: 28px;
     padding-left: 15px;
     padding-right: 10px;
     display: flex;
 }
-.newitem span{
+
+.newitem span {
     width: 8px;
     height: 8px;
     margin: 6px auto;
@@ -127,13 +201,15 @@
     display: block;
 
 }
-.newitem label{
+
+.newitem label {
     font-weight: 500;
     width: calc(100% - 10px);
     width: -webkit-calc(100% - 10px);
     width: -moz-calc(100% - 10px);
     padding-left: 5px;
 }
-.newitem label:hover{
+
+.newitem label:hover {
     text-decoration: underline;
 }

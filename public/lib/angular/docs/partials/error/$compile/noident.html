@@ -1,8 +1,9 @@
-<a href='https://github.com/angular/angular.js/edit/v1.5.x/docs/content/error/$compile/noident.ngdoc?message=docs(error%2Fnoident)%3A%20describe%20your%20change...' class='improve-docs btn btn-primary'><i class="glyphicon glyphicon-edit">&nbsp;</i>Improve this Doc</a>
+<a href='https://github.com/angular/angular.js/edit/v1.5.x/docs/content/error/$compile/noident.ngdoc?message=docs(error%2Fnoident)%3A%20describe%20your%20change...'
+   class='improve-docs btn btn-primary'><i class="glyphicon glyphicon-edit">&nbsp;</i>Improve this Doc</a>
 
 
 <h1>Error: $compile:noident
-  <div><span class='hint'>Controller identifier is required.</span></div>
+    <div><span class='hint'>Controller identifier is required.</span></div>
 </h1>
 
 <div>
@@ -11,13 +12,13 @@
 
 <h2>Description</h2>
 <div class="description">
-  <p>When using the <code>bindToController</code> feature of AngularJS, a directive is required
-to have a Controller identifier, which is initialized in scope with the value of
-the controller instance. This can be supplied using the &quot;controllerAs&quot; property
-of the directive object, or alternatively by adding &quot; as IDENTIFIER&quot; to the controller
-name.</p>
-<p>For example, the following directives are valid:</p>
-<pre><code class="lang-js">// OKAY, because controller is a string with an identifier component.
+    <p>When using the <code>bindToController</code> feature of AngularJS, a directive is required
+        to have a Controller identifier, which is initialized in scope with the value of
+        the controller instance. This can be supplied using the &quot;controllerAs&quot; property
+        of the directive object, or alternatively by adding &quot; as IDENTIFIER&quot; to the controller
+        name.</p>
+    <p>For example, the following directives are valid:</p>
+    <pre><code class="lang-js">// OKAY, because controller is a string with an identifier component.
 directive(&quot;okay&quot;, function() {
   return {
     bindToController: true,
@@ -44,8 +45,8 @@ directive(&quot;okay2&quot;, function() {
   };
 });
 </code></pre>
-<p>While the following are invalid:</p>
-<pre><code class="lang-js">// BAD, because the controller property is a string with no identifier.
+    <p>While the following are invalid:</p>
+    <pre><code class="lang-js">// BAD, because the controller property is a string with no identifier.
 directive(&quot;bad&quot;, function() {
   return {
     bindToController: true,

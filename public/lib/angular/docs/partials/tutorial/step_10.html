@@ -1,25 +1,27 @@
-<a href='https://github.com/angular/angular.js/edit/v1.5.x/docs/content/tutorial/step_10.ngdoc?message=docs(tutorial%2F10 - More Templating)%3A%20describe%20your%20change...' class='improve-docs btn btn-primary'><i class="glyphicon glyphicon-edit">&nbsp;</i>Improve this Doc</a>
+<a href='https://github.com/angular/angular.js/edit/v1.5.x/docs/content/tutorial/step_10.ngdoc?message=docs(tutorial%2F10 - More Templating)%3A%20describe%20your%20change...'
+   class='improve-docs btn btn-primary'><i class="glyphicon glyphicon-edit">&nbsp;</i>Improve this Doc</a>
 
 
 <ul doc-tutorial-nav="10"></ul>
 
 
 <p>In this step, we will implement the phone details view, which is displayed when a user clicks on a
-phone in the phone list.</p>
+    phone in the phone list.</p>
 <ul>
-<li>When you click on a phone on the list, the phone details page with phone-specific information is
-displayed.</li>
+    <li>When you click on a phone on the list, the phone details page with phone-specific information is
+        displayed.
+    </li>
 </ul>
 <p>To implement the phone details view we are going to use <a href="api/ng/service/$http">$http</a> to fetch our data,
-and then flesh out the <code>phoneDetail</code> component&#39;s template.</p>
+    and then flesh out the <code>phoneDetail</code> component&#39;s template.</p>
 <div doc-tutorial-reset="10"></div>
 
 
 <h2 id="data">Data</h2>
 <p>In addition to <code>phones.json</code>, the <code>app/phones/</code> directory also contains one JSON file for each
-phone:</p>
-<p><br />
-<strong><code>app/phones/nexus-s.json</code>:</strong> (sample snippet)</p>
+    phone:</p>
+<p><br/>
+    <strong><code>app/phones/nexus-s.json</code>:</strong> (sample snippet)</p>
 <pre><code class="lang-json">{
   &quot;additionalFeatures&quot;: &quot;Contour Display, Near Field Communications (NFC), ...&quot;,
   &quot;android&quot;: {
@@ -40,12 +42,13 @@ phone:</p>
 }
 </code></pre>
 <p>Each of these files describes various properties of the phone using the same data structure. We will
-show this data in the phone details view.</p>
+    show this data in the phone details view.</p>
 <h2 id="component-controller">Component Controller</h2>
-<p>We will expand the <code>phoneDetail</code> component&#39;s controller by using the <code>$http</code> service to fetch the
-appropriate JSON files. This works the same way as the <code>phoneList</code> component&#39;s controller.</p>
-<p><br />
-<strong><code>app/phone-detail/phone-detail.component.js</code>:</strong></p>
+<p>We will expand the <code>phoneDetail</code> component&#39;s controller by using the <code>$http</code> service to
+    fetch the
+    appropriate JSON files. This works the same way as the <code>phoneList</code> component&#39;s controller.</p>
+<p><br/>
+    <strong><code>app/phone-detail/phone-detail.component.js</code>:</strong></p>
 <pre><code class="lang-js">angular.
   module(&#39;phoneDetail&#39;).
   component(&#39;phoneDetail&#39;, {
@@ -62,13 +65,13 @@ appropriate JSON files. This works the same way as the <code>phoneList</code> co
   });
 </code></pre>
 <p>To construct the URL for the HTTP request, we use <code>$routeParams.phoneId</code>, which is extracted from
-the current route by the <code>$route</code> service.</p>
+    the current route by the <code>$route</code> service.</p>
 <h2 id="component-template">Component Template</h2>
 <p>The inline, TBD placeholder template has been replaced with a full blown external template,
-including lists and bindings that comprise the phone details. Note how we use the Angular
-<code>{{expression}}</code> markup and <code>ngRepeat</code> to project phone data from our model into the view.</p>
-<p><br />
-<strong><code>app/phone-detail/phone-detail.template.html</code>:</strong></p>
+    including lists and bindings that comprise the phone details. Note how we use the Angular
+    <code>{{expression}}</code> markup and <code>ngRepeat</code> to project phone data from our model into the view.</p>
+<p><br/>
+    <strong><code>app/phone-detail/phone-detail.template.html</code>:</strong></p>
 <pre><code class="lang-html">&lt;img ng-src=&quot;{{$ctrl.phone.images[0]}}&quot; class=&quot;phone&quot; /&gt;
 
 &lt;h1&gt;{{$ctrl.phone.name}}&lt;/h1&gt;
@@ -99,9 +102,9 @@ including lists and bindings that comprise the phone details. Note how we use th
 <p><img class="diagram" src="img/tutorial/tutorial_10.png"></p>
 <h1 id="testing">Testing</h1>
 <p>We wrote a new unit test that is similar to the one we wrote for the <code>phoneList</code> component&#39;s
-controller in <a href="tutorial/step_07#testing">step 7</a>.</p>
-<p><br />
-<strong><code>app/phone-detail/phone-detail.component.spec.js</code>:</strong></p>
+    controller in <a href="tutorial/step_07#testing">step 7</a>.</p>
+<p><br/>
+    <strong><code>app/phone-detail/phone-detail.component.spec.js</code>:</strong></p>
 <pre><code class="lang-js">describe(&#39;phoneDetail&#39;, function() {
 
   // Load the module that contains the `phoneDetail` component before each test
@@ -135,9 +138,9 @@ controller in <a href="tutorial/step_07#testing">step 7</a>.</p>
 <pre><code>Chrome 49.0: Executed 3 of 3 SUCCESS (0.159 secs / 0.136 secs)
 </code></pre>
 <p>We also added a new E2E test that navigates to the &#39;Nexus S&#39; details page and verifies that the
-heading on the page is &quot;Nexus S&quot;.</p>
-<p><br />
-<strong><code>e2e-tests/scenarios.js</code></strong></p>
+    heading on the page is &quot;Nexus S&quot;.</p>
+<p><br/>
+    <strong><code>e2e-tests/scenarios.js</code></strong></p>
 <pre><code class="lang-js">...
 
 describe(&#39;View: Phone detail&#39;, function() {
@@ -159,12 +162,14 @@ describe(&#39;View: Phone detail&#39;, function() {
 <div></div>
 
 <ul>
-<li>Using <a href="https://angular.github.io/protractor/#/api">Protractor&#39;s API</a>, write a test that verifies that we display 4 thumbnail
-images on the &#39;Nexus S&#39; details page.</li>
+    <li>Using <a href="https://angular.github.io/protractor/#/api">Protractor&#39;s API</a>, write a test that verifies
+        that we display 4 thumbnail
+        images on the &#39;Nexus S&#39; details page.
+    </li>
 </ul>
 <h1 id="summary">Summary</h1>
 <p>Now that the phone details view is in place, proceed to <a href="tutorial/step_11">step 11</a> to learn how to
-write your own custom display filter.</p>
+    write your own custom display filter.</p>
 <ul doc-tutorial-nav="10"></ul>
 
 

@@ -21,9 +21,9 @@
     }
 
     .nav-center {
-        width: calc(100% - 360px);
-        width: -webkit-calc(100% - 360px);
-        width: -moz-calc(100% - 360px);
+        width: calc(100% - 540px);
+        width: -webkit-calc(100% - 540px);
+        width: -moz-calc(100% - 540px);
         height: 100%;
     }
 
@@ -32,6 +32,7 @@
         margin-bottom: 0px;
         display: flex;
         list-style-type: disc;
+        list-style: none;
     }
 
     .nav-center ul li {
@@ -39,9 +40,43 @@
         text-align: center;
         line-height: 70px;
         list-style-type: none;
+        margin-bottom: 5px;
+        transform: 0.1s all linear;
+        -webkit-transform: 0.1s all linear;
+        -moz-transform: 0.1s all linear;
+        cursor: pointer;
+        position: relative;
     }
-    .nav-selected label {
-        color: white !important;
+
+    .nav-center ul li::before {
+        content: "";
+        position: absolute;
+        top: 0px;
+        left: 0px;
+        width: 0px;
+        height: 100%;
+        border-bottom: 1px solid white;
+        transform: 0.2s all linear;
+        -moz-transform: 0.2s all linear;
+        -webkit-transform: 0.2s all linear;
+    }
+
+    .nav-center ul li:hover:before {
+        width: 100%;
+        top: 0px;
+        left: 0px;
+        transition-delay: 0.1s;
+        -moz-transition-delay: 0.1s;
+        -webkit-transition-delay: 0.1s;
+        border-bottom-color: white;
+    }
+
+    .nav-center ul li:hover ~ .nav-center ul li::before {
+        left: 0px;
+    }
+
+    .nav-center ul li:active {
+        border-bottom-color: white;
     }
 
     .nav-center ul li label {
@@ -56,8 +91,20 @@
     }
 
     .nav-right {
-        width: 120px;
+        width: 300px;
         height: 100%;
+    }
+
+    .nav-selected {
+        color: white;
+        border-bottom: 1px solid white;
+        transform: 0.2s all linear;
+        -moz-transform: 0.2s all linear;
+        -webkit-transform: 0.2s all linear;
+    }
+
+    .nav-selected label {
+        color: white !important;
     }
 </style>
 <div class="navdiv" ng-init="ininMe()">
@@ -66,7 +113,9 @@
     </div>
     <div class="nav-center">
         <ul>
-            <li ng-repeat="nav in navslist" ng-class="{true:'nav-selected',false:''}[currentParem.moduleCode==nav.moduleCode]" ng-click="navClick(nav)">
+            <li ng-repeat="nav in navslist"
+                ng-class="{true:'nav-selected',false:''}[currentParem.moduleCode==nav.moduleCode]"
+                ng-click="navClick(nav)">
                 <label ng-bind="nav.title"></label>
             </li>
         </ul>

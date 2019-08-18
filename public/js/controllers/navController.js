@@ -16,9 +16,11 @@ define([
         $http.get('modules/moduleConfig.json').then(function (res) {
             $scope.navslist = res.data;
         });
-        $scope.$watch(function () { return routerService.rateModel }, function (n, o) {
-            if(o!=n){
-                $scope.currentParem=routerService.rateModel;
+        $scope.$watch(function () {
+            return routerService.rateModel
+        }, function (n, o) {
+            if (o != n) {
+                $scope.currentParem = routerService.rateModel;
             }
         }, true)
 
