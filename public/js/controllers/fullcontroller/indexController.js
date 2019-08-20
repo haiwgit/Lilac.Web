@@ -1,7 +1,8 @@
 define([
-    'index-module', 'd3', 'routerService', 'dialog', 'messager','indexService',
-    'ctrls/indexManager/picManger/userController', 'services/indexService'
-], function (app, d3) {
+    'index-module','d3','routerService', 
+    'services/index/index-service','dialog', 'messager',
+    'ctrls/indexManager/picManger/userController'
+], function (app,d3) {
     'use strict';
     app.controller('indexController', function ($scope, $interval, $cookies, $window, $http, routerService, dialog, messager,indexService) {
         $scope.slides = [];
@@ -320,7 +321,7 @@ define([
            
         }
         function text(){
-            indexService.getString("hell",function(res){
+            indexService.hello("hell",function(res){
                 alert(res);
             })
         }

@@ -1,5 +1,5 @@
 define([
-    'login-module', 'crypto', 'services/loginService'
+    'login-module', 'crypto', 'services/login/login-service'
 ], function (app, crypto) {
     'use strict';
     app.controller('loginController', function ($scope, $cookies, loginService) {

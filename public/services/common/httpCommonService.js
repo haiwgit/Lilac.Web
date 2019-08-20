@@ -1,4 +1,4 @@
-define(['login-module', 'config'], function (svc, config) {
+define(['index-module', 'config'], function (svc, config) {
     'use strict';
     svc.factory('http', function ($http, $cookies, $window) {
         var authID = $cookies.get('AUTH_ID');
