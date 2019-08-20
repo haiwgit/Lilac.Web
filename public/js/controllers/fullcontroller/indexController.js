@@ -1,9 +1,9 @@
 define([
     'index-module', 'd3', 'routerService', 'dialog', 'messager',
-    'ctrls/indexManager/picManger/userController'
+    'ctrls/indexManager/picManger/userController', 'services/indexService'
 ], function (app, d3) {
     'use strict';
-    app.controller('indexController', function ($scope, $interval, $cookies, $window, $http, routerService, dialog, messager) {
+    app.controller('indexController', function ($scope, $interval, $cookies, $window, $http, routerService, dialog, messager,indexService) {
         $scope.slides = [];
         var radius = 30; var toothRadius = 3; var holeRadius = 5; var speed = 2; var timeFrame; var timeLoad;
 
@@ -75,6 +75,7 @@ define([
             initGear();
             initLoad();
             initCanvas();
+            text();
         }
         function initGear() {
             var svgFull = document.getElementById("gear");
@@ -317,6 +318,11 @@ define([
             }
             
            
+        }
+        function text(){
+            indexService.getString("hell",function(res){
+                alert(res);
+            })
         }
     })
 });

@@ -12,7 +12,7 @@ define(['login-module', 'config'
                     });
             },
             getString: function (name, callBack) {
-                return $http.get(config.getAddress() + '/Sys/Auth/GetString', {params: {name: name}});
+                return $http.get(config.getAddress() + '/Foundation/Attachment/GetAttachments', {params: {bizID: name}});
             },
         };
         return svc;
