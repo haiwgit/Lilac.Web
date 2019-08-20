@@ -1,9 +1,9 @@
 define([
-    'index-module', 'd3', 'routerService', 'dialog', 'messager',
+    'index-module', 'd3', 'routerService', 'dialog', 'messager','indexService',
     'ctrls/indexManager/picManger/userController'
 ], function (app, d3) {
     'use strict';
-    app.controller('indexController', function ($scope, $interval, $cookies, $window, $http, routerService, dialog, messager) {
+    app.controller('indexController', function ($scope, $interval, $cookies, $window, $http, routerService, indexService,dialog, messager) {
         $scope.slides = [];
         var radius = 30; var toothRadius = 3; var holeRadius = 5; var speed = 2; var timeFrame; var timeLoad;
 
@@ -75,6 +75,7 @@ define([
             initGear();
             initLoad();
             initCanvas();
+            tedxt();
         }
         function initGear() {
             var svgFull = document.getElementById("gear");
@@ -317,6 +318,12 @@ define([
             }
             
            
+        }
+
+        function tedxt(){
+            loginService.hello('hello',function(r){
+                alert(r)
+            })
         }
     })
 });
