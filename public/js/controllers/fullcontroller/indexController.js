@@ -1,5 +1,5 @@
 define([
-    'index-module', 'd3', 'routerService', 'dialog', 'messager',
+    'index-module', 'd3', 'routerService', 'dialog', 'messager','indexService',
     'ctrls/indexManager/picManger/userController', 'services/indexService'
 ], function (app, d3) {
     'use strict';
